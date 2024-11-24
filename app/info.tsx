@@ -129,7 +129,7 @@ const Info = () => {
               "Materi Pembelajaran Interaktif\nMenyediakan materi Algoritma dan Pemrograman yang disajikan dalam bentuk teks, video, dan contoh untuk mempermudah pemahaman konsep dasar.",
               "Latihan Soal\nFitur latihan soal interaktif yang mencakup pilihan ganda. Hasil evaluasi langsung ditampilkan untuk memberikan umpan balik kepada siswa.",
               "Compiler dan Studi Kasus\nMenyediakan compiler dasar untuk bahasa pemrograman C++ agar siswa dapat langsung mempraktikkan kode mereka di dalam aplikasi serta studi kasus atau soal yang harus dikerjakan dalam menggunakan compiler tersebut.",
-              "Akses Offline dan Online\nAplikasi dapat digunakan dalam mode offline untuk materi, video dan latihan soal, serta online untuk fitur compiler atau tes code.",
+              "Akses Offline dan Online\nAplikasi dapat digunakan dalam mode offline untuk materi dan latihan soal, serta online untuk fitur compiler atau tes code serta video pendukung materi.",
             ].map((item, index) => (
               <View key={index} className="flex-row items-start">
                 <Text

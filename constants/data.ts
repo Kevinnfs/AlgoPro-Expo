@@ -40,11 +40,11 @@ export const courseDetails = [
     ],
     videoContent: [
       {
-        source: "https://www.youtube.com/watch?v=fPUv75x2Gho",
+        source: "https://www.youtube.com/embed/fPUv75x2Gho?autoplay=0",
         title: "Penjelasan Algoritma",
       },
       {
-        source: "https://youtu.be/u1huXRBkSbE?si=8XKHDtPiN4bqIj2X",
+        source: "https://www.youtube.com/embed/u1huXRBkSbE?autoplay=0",
         title: "Implementasi Flowchart",
       },
     ],
@@ -127,11 +127,11 @@ export const courseDetails = [
     ],
     videoContent: [
       {
-        source: "https://youtu.be/AmoTQhK6gmI?si=kWG6ZoS6Ph8FZhGC",
+        source: "https://www.youtube.com/embed/AmoTQhK6gmI?autoplay=0",
         title: "Perbedaan Dasar C dan C++",
       },
       {
-        source: "https://youtu.be/xDf-3atHE8Y?si=7C52zKITUeelRyym",
+        source: "https://www.youtube.com/embed/xDf-3atHE8Y?autoplay=0",
         title: "Program Bahasa C dan C++",
       },
     ],
@@ -367,11 +367,11 @@ export const courseDetails = [
     ],
     videoContent: [
       {
-        source: "https://youtu.be/euxcvQ30Aik?si=B14okb2eer5yErYg",
+        source: "https://www.youtube.com/embed/euxcvQ30Aik?autoplay=0",
         title: "Penggunaan Operator dan Ekspresi",
       },
       {
-        source: "https://youtu.be/z2_BN6Y-Ibw?si=JgKnaMy27oZHEH7U",
+        source: "https://www.youtube.com/embed/z2_BN6Y-Ibw?autoplay=0",
         title: "Operasi Aritmatika dan Logika",
       },
     ],
@@ -467,7 +467,7 @@ export const courseDetails = [
     ],
     videoContent: [
       {
-        source: "https://youtu.be/yAv3YR6xaJk?si=DQQ7qZehATmjgSim",
+        source: "https://www.youtube.com/embed/yAv3YR6xaJk?autoplay=0",
         title: "Macam-Macam Kontrol Keputusan",
       },
     ],
@@ -534,15 +534,15 @@ export const courseDetails = [
     ],
     videoContent: [
       {
-        source: "https://youtu.be/hVzmJwyMH2Q?si=9iGnk9I5OuVriFbw",
+        source: "https://www.youtube.com/embed/hVzmJwyMH2Q?autoplay=0",
         title: "Kontrol Perulangan for",
       },
       {
-        source: "https://youtu.be/ctxtCv7plVc?si=3ERNnhMk1sUU7w7u",
+        source: "https://www.youtube.com/embed/ctxtCv7plVc?autoplay=0",
         title: "Kontrol Perulangan while",
       },
       {
-        source: "https://youtu.be/kH8bkgogfD0?si=UMqbJJWWp7BynKz3",
+        source: "https://www.youtube.com/embed/kH8bkgogfD0?autoplay=0",
         title: "Kontrol Perulangan do-while",
       },
     ],
@@ -588,11 +588,11 @@ export const courseDetails = [
     ],
     videoContent: [
       {
-        source: "https://youtu.be/CripazfuzpM?si=j7zbTHruWYOUFBf0",
+        source: "https://www.youtube.com/embed/CripazfuzpM?autoplay=0",
         title: "Prosedur dan Fungsi",
       },
       {
-        source: "https://youtu.be/Z1OrbOL_5wo?si=qC_6aquN6UJuUQ_3",
+        source: "https://www.youtube.com/embed/Z1OrbOL_5wo?autoplay=0",
         title: "Parameter",
       },
     ],

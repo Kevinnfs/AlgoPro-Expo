@@ -7,6 +7,7 @@ import {
   ScrollView,
   Modal,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
 import { images } from "@/assets/images";
 import { useLocalSearchParams } from "expo-router";
@@ -78,6 +79,9 @@ const Coursedetail = () => {
   );
 
   if (!course) return <Text>Course not found</Text>;
+
+  const screenWidth = Dimensions.get("window").width;
+  const videoHeight = (screenWidth - 60) * (9 / 16); // Tinggi berdasarkan rasio 16:9
 
   const openImageModal = (image: any) => {
     setSelectedImage(image);
@@ -206,20 +210,22 @@ const Coursedetail = () => {
                   {/* Video dalam Card */}
                   <View
                     style={{
-                      borderWidth: 2,
-                      borderColor: "#777B7E",
+                      width: screenWidth - 10, // Pastikan lebar sesuai layar dengan margin
+                      height: videoHeight, // Tinggi dihitung dari rasio
                       borderRadius: 10,
                       overflow: "hidden",
-                      height: 200, // Tinggi tetap untuk tampilan video
+                      alignSelf: "center", // Tengah di layar
                     }}
                   >
                     <WebView
-                      source={{ uri: video.source }}
-                      allowsInlineMediaPlayback
-                      style={{
-                        width: "100%",
-                        aspectRatio: 16 / 9, // Proporsi layar 16:9
+                      source={{
+                        uri: video.source.includes("embed/")
+                          ? video.source + "&autoplay=0"
+                          : video.source.replace("watch?v=", "embed/") +
+                            "?modestbranding=1&showinfo=0&rel=0&autoplay=0",
                       }}
+                      allowsInlineMediaPlayback
+                      style={{ height: 200, width: "100%" }}
                     />
                   </View>
                 </View>
