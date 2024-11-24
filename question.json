@@ -1,0 +1,158 @@
+[
+    {
+      "question": "Apa yang dimaksud dengan algoritma?",
+      "options": [
+        "Langkah-langkah terstruktur untuk menyelesaikan suatu masalah.",
+        "Program komputer yang sudah berjalan.",
+        "Kumpulan data yang tersimpan dalam memori.",
+        "Bahasa pemrograman tingkat tinggi."
+      ],
+      "correctAnswer": "Langkah-langkah terstruktur untuk menyelesaikan suatu masalah."
+    },
+    {
+      "question": "Simbol instruksi untuk memulai atau mengakhiri proses biasanya berbentuk:",
+      "options": ["Persegi", "Lingkaran", "Oval", "Segitiga"],
+      "correctAnswer": "Oval"
+    },
+    {
+      "question": "Simbol instruksi operasi aritmatika digunakan untuk:",
+      "options": [
+        "Menyimpan nilai ke dalam variabel.",
+        "Menunjukkan hasil perhitungan.",
+        "Mengambil keputusan berdasarkan kondisi.",
+        "Memvisualisasikan alur program."
+      ],
+      "correctAnswer": "Menunjukkan hasil perhitungan."
+    },
+    {
+      "question": "Apa fungsi dari simbol '<=' dalam algoritma?",
+      "options": [
+        "Memeriksa apakah nilai lebih besar.",
+        "Memeriksa apakah nilai lebih kecil.",
+        "Memeriksa apakah nilai lebih kecil atau sama dengan.",
+        "Memeriksa apakah nilai lebih besar atau sama dengan."
+      ],
+      "correctAnswer": "Memeriksa apakah nilai lebih kecil atau sama dengan."
+    },
+    {
+      "question": "Apa nama lain dari kode semu?",
+      "options": ["Pseudocode", "Flowchart", "Compiler", "Debugger"],
+      "correctAnswer": "Pseudocode"
+    },
+    {
+      "question": "Siapa penemu bahasa pemrograman C?",
+      "options": ["Bjarne Stroustrup", "Dennis Ritchie", "Alan Turing", "Guido van Rossum"],
+      "correctAnswer": "Dennis Ritchie"
+    },
+    {
+      "question": "Apa perbedaan utama antara C dan C++?",
+      "options": [
+        "C++ mendukung pemrograman berorientasi objek, sedangkan C tidak.",
+        "C++ hanya digunakan untuk sistem operasi.",
+        "C adalah bahasa yang lebih modern dibandingkan C++.",
+        "C++ tidak mendukung pemrograman prosedural."
+      ],
+      "correctAnswer": "C++ mendukung pemrograman berorientasi objek, sedangkan C tidak."
+    },
+    {
+      "question": "Pustaka standar di C++ disebut:",
+      "options": ["STL (Standard Template Library)", "Library Python", ".NET Framework", "Java Development Kit"],
+      "correctAnswer": "STL (Standard Template Library)"
+    },
+    {
+      "question": "Bagaimana cara mendeklarasikan variabel di C?",
+      "options": ["int x;", "var x;", "let x;", "def x;"],
+      "correctAnswer": "int x;"
+    },
+    {
+      "question": "Apa fungsi dari #include <iostream> di C++?",
+      "options": [
+        "Menghapus nilai variabel.",
+        "Menyertakan pustaka input/output standar.",
+        "Menambahkan pustaka untuk operasi matematika.",
+        "Mengubah format teks."
+      ],
+      "correctAnswer": "Menyertakan pustaka input/output standar."
+    },
+    {
+      "question": "Pernyataan if digunakan untuk:",
+      "options": [
+        "Menjalankan blok kode berdasarkan kondisi.",
+        "Mengulang perintah hingga kondisi terpenuhi.",
+        "Menampilkan pesan ke layar.",
+        "Menyimpan nilai ke dalam variabel."
+      ],
+      "correctAnswer": "Menjalankan blok kode berdasarkan kondisi."
+    },
+    {
+      "question": "Apa perbedaan utama antara if-else dan if-else if-else?",
+      "options": [
+        "if-else hanya memiliki satu kondisi, sedangkan if-else if-else bisa memiliki banyak kondisi.",
+        "if-else digunakan untuk pengulangan.",
+        "if-else if-else tidak memerlukan kondisi.",
+        "if-else hanya digunakan dalam fungsi."
+      ],
+      "correctAnswer": "if-else hanya memiliki satu kondisi, sedangkan if-else if-else bisa memiliki banyak kondisi."
+    },
+    {
+      "question": "Apa output dari pernyataan berikut?\n\nint x = 5;\nif (x > 3) {\n  cout << 'Besar';\n} else {\n  cout << 'Kecil';\n}",
+      "options": ["Besar", "Kecil", "Error", "Tidak ada output"],
+      "correctAnswer": "Besar"
+    },
+    {
+      "question": "Pada struktur switch, apa fungsi dari break?",
+      "options": [
+        "Menghentikan program secara keseluruhan.",
+        "Mengakhiri eksekusi case saat ini.",
+        "Melanjutkan ke case berikutnya.",
+        "Menampilkan pesan kesalahan."
+      ],
+      "correctAnswer": "Mengakhiri eksekusi case saat ini."
+    },
+    {
+      "question": "Kondisi logika dalam pernyataan if harus bernilai:",
+      "options": ["Integer", "String", "Boolean", "Float"],
+      "correctAnswer": "Boolean"
+    },
+    {
+      "question": "Apa yang akan terjadi jika kondisi dalam while loop tidak pernah false?",
+      "options": [
+        "Program akan berhenti secara otomatis.",
+        "Loop akan terus berjalan (infinite loop).",
+        "Program akan menghapus kondisi.",
+        "Program akan kembali ke awal."
+      ],
+      "correctAnswer": "Loop akan terus berjalan (infinite loop)."
+    },
+    {
+      "question": "Bagaimana cara mengakhiri pengulangan lebih awal di dalam loop?",
+      "options": ["Gunakan perintah stop.", "Gunakan perintah end.", "Gunakan perintah break.", "Gunakan perintah return."],
+      "correctAnswer": "Gunakan perintah break."
+    },
+    {
+      "question": "Apa perbedaan utama antara for dan while loop?",
+      "options": [
+        "for loop digunakan untuk pengulangan tak terbatas.",
+        "while loop tidak memiliki kondisi.",
+        "for loop cocok untuk pengulangan dengan jumlah pasti.",
+        "while loop hanya bisa digunakan dengan variabel integer."
+      ],
+      "correctAnswer": "for loop cocok untuk pengulangan dengan jumlah pasti."
+    },
+    {
+      "question": "Apa output dari kode berikut?\n\nfor (int i = 0; i < 3; i++) {\n  cout << i << ' ';\n}",
+      "options": ["1 2 3", "0 1 2", "0 1 2 3", "Tidak ada output"],
+      "correctAnswer": "0 1 2"
+    },
+    {
+      "question": "Apa yang dilakukan pernyataan do-while?",
+      "options": [
+        "Menjalankan blok kode setidaknya sekali.",
+        "Melakukan pengulangan tak terbatas.",
+        "Mengabaikan kondisi selama loop berjalan.",
+        "Menjalankan loop tanpa evaluasi kondisi."
+      ],
+      "correctAnswer": "Menjalankan blok kode setidaknya sekali."
+    }
+  ]
+  
