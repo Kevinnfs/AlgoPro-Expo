@@ -218,11 +218,13 @@ export default function HomeScreen() {
           <Text className="text-lg " style={{ fontFamily: "LoraBold" }}>
             Rekomendasi
           </Text>
-          <Text
-            style={{ color: Colors.textOrange, fontFamily: "LoraSemiBold" }}
-          >
-            Lihat semua
-          </Text>
+          <Pressable onPress={() => router.push("/explore")}>
+            <Text
+              style={{ color: Colors.textOrange, fontFamily: "LoraSemiBold" }}
+            >
+              Lihat semua
+            </Text>
+          </Pressable>
         </View>
 
         {isLoading ? (

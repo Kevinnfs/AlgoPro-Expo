@@ -31,7 +31,7 @@
     "expo-system-ui": "~3.0.7",
     "expo-web-browser": "~13.0.3",
     "lottie-react-native": "6.7.0",
-    "nativewind": "4.0.1",
+    "nativewind": "^4.1.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.5",
@@ -42,7 +42,7 @@
     "react-native-screens": "3.31.1",
     "react-native-web": "~0.19.10",
     "react-native-webview": "13.8.6",
-    "tailwindcss": "^3.4.14",
+    "tailwindcss": "^3.4.15",
     "zustand": "^5.0.0"
   },
   "devDependencies": {
