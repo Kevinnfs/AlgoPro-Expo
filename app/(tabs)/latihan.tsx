@@ -29,20 +29,20 @@ const Latihan = () => {
   }, []);
 
   useEffect(() => {
-    if (!isInstructionVisible && !isAnswered) {
+    if (!isInstructionVisible) {
       const timer = setInterval(() => {
         setTimeLeft((prevTime) => {
           if (prevTime <= 1) {
-            handleNext(); // Jika waktu habis, otomatis lanjut
+            handleNext(); // Otomatis lanjut soal jika waktu habis
             return 15;
           }
           return prevTime - 1;
         });
       }, 1000);
 
-      return () => clearInterval(timer); // Bersihkan timer saat soal selesai atau saat efek di-retrigger
+      return () => clearInterval(timer); // Hentikan timer saat efek di-retrigger
     }
-  }, [isInstructionVisible, currentQuestionIndex, isAnswered]);
+  }, [isInstructionVisible, currentQuestionIndex]);
 
   const handleNext = () => {
     if (selectedOption === questions[currentQuestionIndex]?.correctAnswer) {
@@ -70,6 +70,7 @@ const Latihan = () => {
     if (!isAnswered) {
       setSelectedOption(option);
       setIsAnswered(true); // Tandai soal sebagai dijawab
+      // Tidak perlu menghentikan timer disini
     }
   };
 
@@ -273,31 +274,31 @@ const styles = StyleSheet.create({
     backgroundColor: "#f0f0f0",
   },
   selectedOption: {
-    backgroundColor: "#EF8E4A",
+    backgroundColor: "#4CAF50",
   },
   disabledOption: {
-    backgroundColor: "#ccc",
+    backgroundColor: "#d3d3d3",
   },
   optionText: {
     fontSize: 16,
   },
-  defaultOptionText: {
-    color: "black",
-  },
   selectedOptionText: {
     color: "white",
   },
+  defaultOptionText: {
+    color: "#333",
+  },
   nextButton: {
+    marginTop: 24,
     padding: 12,
     borderRadius: 8,
     alignItems: "center",
-    marginTop: 16,
   },
   activeNextButton: {
     backgroundColor: "#EF8E4A",
   },
   disabledNextButton: {
-    backgroundColor: "#ccc",
+    backgroundColor: "#d3d3d3",
   },
   nextButtonText: {
     color: "white",
