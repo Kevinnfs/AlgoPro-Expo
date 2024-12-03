@@ -7,15 +7,18 @@ import {
   Image,
   Animated,
 } from "react-native";
-import { Picker } from "@react-native-picker/picker";
-import { WebView } from "react-native-webview";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import WebView from "react-native-webview";
 
 type NavigateTo = (screen: string) => void;
 
 const Code: React.FC<{ navigateTo: NavigateTo }> = ({ navigateTo }) => {
   // State untuk dropdown aktif
   const [selectedDropdown, setSelectedDropdown] = useState<string | null>(null);
+  const [selectedTugasDropdown, setSelectedTugasDropdown] =
+    useState<boolean>(false);
+  const [selectedWaktuDropdown, setSelectedWaktuDropdown] =
+    useState<boolean>(false);
 
   // Data untuk dropdown
   const dropdownData = [
@@ -37,7 +40,7 @@ const Code: React.FC<{ navigateTo: NavigateTo }> = ({ navigateTo }) => {
     {
       label: "Kelompok 4",
       content:
-        "Buatlah fungsi untuk menginput nilai dan menampilkan status kelulusan siswa ",
+        "Buatlah fungsi untuk menginput nilai dan menampilkan status kelulusan siswa.",
     },
   ];
 
@@ -54,6 +57,14 @@ const Code: React.FC<{ navigateTo: NavigateTo }> = ({ navigateTo }) => {
     }).start();
 
     setSelectedDropdown(isOpen ? null : label);
+  };
+
+  const handleTugasToggle = () => {
+    setSelectedTugasDropdown(!selectedTugasDropdown);
+  };
+
+  const handleWaktuToggle = () => {
+    setSelectedWaktuDropdown(!selectedWaktuDropdown);
   };
 
   // Rotasi ikon
@@ -155,73 +166,163 @@ const Code: React.FC<{ navigateTo: NavigateTo }> = ({ navigateTo }) => {
             </Text>
           </Pressable>
         </View>
-        {/* Dropdowns */}
-        {dropdownData.map((item, index) => (
-          <View
-            key={index}
+
+        {/* Dropdown Tugas */}
+        <View
+          style={{
+            margin: 16,
+            marginBottom: 3,
+            borderColor: "#ccc",
+            borderWidth: 1,
+            borderRadius: 8,
+            backgroundColor: "white",
+          }}
+        >
+          <Pressable
+            onPress={handleTugasToggle}
             style={{
-              margin: 16,
-              marginBottom: 3,
-              borderColor: "#ccc",
-              borderWidth: 1,
-              borderRadius: 8,
-              backgroundColor: "white",
+              padding: 16,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              backgroundColor: "#F18E33",
+              borderTopLeftRadius: 8,
+              borderTopRightRadius: 8,
             }}
           >
-            <Pressable
-              onPress={() => handleToggle(item.label)}
+            <Text
               style={{
-                padding: 16,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-                backgroundColor: "#F18E33",
-                borderTopLeftRadius: 8,
-                borderTopRightRadius: 8,
+                color: "white",
+                fontSize: 16,
+                fontWeight: "bold",
               }}
             >
-              <Text
-                style={{
-                  color: "white",
-                  fontSize: 16,
-                  fontWeight: "bold",
-                }}
-              >
-                {item.label}
-              </Text>
+              Tugas
+            </Text>
 
-              {/* Ikon rotasi */}
-              <Animated.View
-                style={{
-                  transform: [
-                    {
-                      rotate:
-                        selectedDropdown === item.label ? rotateIcon : "0deg",
-                    },
-                  ],
-                }}
-              >
-                <Ionicons name="chevron-down" size={20} color="white" />
-              </Animated.View>
-            </Pressable>
+            {/* Ikon rotasi */}
+            <Animated.View
+              style={{
+                transform: [
+                  {
+                    rotate: selectedTugasDropdown ? rotateIcon : "0deg",
+                  },
+                ],
+              }}
+            >
+              <Ionicons name="chevron-down" size={20} color="white" />
+            </Animated.View>
+          </Pressable>
 
-            {/* Konten Dropdown */}
-            {selectedDropdown === item.label && (
-              <View
-                style={{
-                  padding: 16,
-                  backgroundColor: "#FDEBDD",
-                  borderBottomLeftRadius: 8,
-                  borderBottomRightRadius: 8,
-                }}
-              >
-                <Text style={{ fontSize: 14, color: "#333" }}>
-                  {item.content}
-                </Text>
-              </View>
-            )}
-          </View>
-        ))}
+          {/* Konten Dropdown Tugas */}
+          {selectedTugasDropdown && (
+            <View style={{ padding: 16 }}>
+              {dropdownData.map((item, index) => (
+                <View
+                  key={index}
+                  style={{
+                    marginBottom: 8,
+                    borderColor: "#ccc",
+                    borderWidth: 1,
+                    borderRadius: 8,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <Pressable
+                    onPress={() => handleToggle(item.label)}
+                    style={{
+                      padding: 16,
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      backgroundColor: "#F18E33",
+                      borderTopLeftRadius: 8,
+                      borderTopRightRadius: 8,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color: "white",
+                        fontSize: 16,
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {item.label}
+                    </Text>
+
+                    {/* Ikon rotasi */}
+                    <Animated.View
+                      style={{
+                        transform: [
+                          {
+                            rotate:
+                              selectedDropdown === item.label
+                                ? rotateIcon
+                                : "0deg",
+                          },
+                        ],
+                      }}
+                    >
+                      <Ionicons name="chevron-down" size={20} color="white" />
+                    </Animated.View>
+                  </Pressable>
+
+                  {/* Konten Dropdown */}
+                  {selectedDropdown === item.label && (
+                    <View
+                      style={{
+                        padding: 16,
+                        backgroundColor: "#FDEBDD",
+                        borderBottomLeftRadius: 8,
+                        borderBottomRightRadius: 8,
+                      }}
+                    >
+                      <Text
+                        style={{
+                          fontSize: 14,
+                          color: "#333",
+                          fontFamily: "LoraSemiBold",
+                        }}
+                      >
+                        {item.content}
+                      </Text>
+                    </View>
+                  )}
+                </View>
+              ))}
+            </View>
+          )}
+        </View>
+
+        {/* Waktu Pengumpulan tanpa Dropdown */}
+        <View
+          style={{
+            margin: 16,
+            padding: 16,
+            borderColor: "#ccc",
+            borderWidth: 1,
+            borderRadius: 8,
+            backgroundColor: "white",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 16,
+              fontWeight: "bold",
+              marginBottom: 8,
+            }}
+          >
+            Waktu dan Penilaian Hasil
+          </Text>
+          <Text
+            className="text-justify"
+            style={{ fontSize: 14, color: "#333", fontFamily: "LoraMedium" }}
+          >
+            Pengumpulan tugas dilakukan pada pertemuan selanjutnya dan dilakukan
+            presentasi pada kelompok 1 dan kelompok 2. Pada pertemuan
+            selanjutnya presentasi untuk kelompok 3 dan kelompok 4.
+          </Text>
+        </View>
       </ScrollView>
     </View>
   );

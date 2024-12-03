@@ -23,6 +23,7 @@ const Latihan = () => {
   const [isInstructionVisible, setIsInstructionVisible] = useState(true);
   const [timeLeft, setTimeLeft] = useState(15);
   const [isAnswered, setIsAnswered] = useState(false);
+  const [scoreHistory, setScoreHistory] = useState<number[]>([]); // Menyimpan riwayat skor
 
   useEffect(() => {
     setQuestions(questionsData as Question[]);
@@ -55,6 +56,9 @@ const Latihan = () => {
       setTimeLeft(15); // Reset waktu untuk soal berikutnya
       setIsAnswered(false); // Reset status soal
     } else {
+      // Menyimpan skor ke riwayat saat soal selesai
+      setScoreHistory([...scoreHistory, score]);
+
       Alert.alert("Kuis Selesai!", `Skor Anda: ${score}/${questions.length}`, [
         {
           text: "Mulai Ulang",
@@ -70,7 +74,6 @@ const Latihan = () => {
     if (!isAnswered) {
       setSelectedOption(option);
       setIsAnswered(true); // Tandai soal sebagai dijawab
-      // Tidak perlu menghentikan timer disini
     }
   };
 
@@ -81,6 +84,11 @@ const Latihan = () => {
     setTimeLeft(15);
     setIsInstructionVisible(true);
     setIsAnswered(false);
+  };
+
+  // Menampilkan riwayat skor dalam tombol
+  const handleShowScoreHistory = () => {
+    Alert.alert("Riwayat Skor", scoreHistory.join("\n"));
   };
 
   if (isInstructionVisible) {
@@ -129,6 +137,22 @@ const Latihan = () => {
           onPress={() => setIsInstructionVisible(false)} // Sembunyikan petunjuk
         >
           <Text style={{ color: "white", fontSize: 16 }}>Mulai Kuis</Text>
+        </TouchableOpacity>
+
+        {/* Tombol Riwayat Skor */}
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#4CAF50",
+            padding: 12,
+            borderRadius: 8,
+            marginTop: 24,
+            alignItems: "center",
+          }}
+          onPress={handleShowScoreHistory}
+        >
+          <Text style={{ color: "white", fontSize: 16 }}>
+            Lihat Riwayat Skor
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -251,33 +275,28 @@ const styles = StyleSheet.create({
   questionNumber: {
     fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 12,
-    color: "#333",
+    marginBottom: 8,
   },
   questionText: {
-    fontSize: 16,
+    fontSize: 18,
     marginBottom: 16,
-    color: "#444",
-  },
-  timer: {
-    fontSize: 16,
-    color: "red",
-    marginBottom: 16,
-    fontWeight: "bold",
   },
   optionButton: {
     padding: 12,
-    borderRadius: 8,
     marginBottom: 8,
-  },
-  defaultOption: {
-    backgroundColor: "#f0f0f0",
+    borderRadius: 8,
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderColor: "#ddd",
   },
   selectedOption: {
     backgroundColor: "#4CAF50",
   },
   disabledOption: {
-    backgroundColor: "#d3d3d3",
+    backgroundColor: "#ddd",
+  },
+  defaultOption: {
+    backgroundColor: "#fff",
   },
   optionText: {
     fontSize: 16,
@@ -303,6 +322,11 @@ const styles = StyleSheet.create({
   nextButtonText: {
     color: "white",
     fontSize: 16,
+  },
+  timer: {
+    fontSize: 18,
+    color: "red",
+    fontWeight: "bold",
   },
 });
 
